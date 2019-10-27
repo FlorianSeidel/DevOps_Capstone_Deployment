@@ -30,11 +30,21 @@ spec:
                        configuration-as-code:1.32,
                        pipeline-utility-steps]
       containerEnv:
+        - name: GITHUB_USER
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-secret
+              key: GITHUB_USER
         - name: GITHUB_PW
           valueFrom:
             secretKeyRef:
               name: jenkins-secret
               key: GITHUB_PW
+        - name: DOCKERHUB_USER
+            valueFrom:
+              secretKeyRef:
+                name: jenkins-secret
+                key: DOCKERHUB_USER
         - name: DOCKERHUB_PW
           valueFrom:
             secretKeyRef:
@@ -63,12 +73,12 @@ spec:
                       - usernamePassword:
                           scope: GLOBAL
                           id: github
-                          username: FlorianSeidel
+                          username: ${GITHUB_USER}
                           password: ${GITHUB_PW}
                       - usernamePassword:
                           scope: GLOBAL
                           id: dockerhub
-                          username: florianseidel
+                          username: ${DOCKERHUB_USER}
                           password: ${DOCKERHUB_PW}
                       - string:
                           scope: GLOBAL
