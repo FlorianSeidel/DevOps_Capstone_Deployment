@@ -14,7 +14,7 @@ spec:
   chart:
     git: git@github.com:florianseidel/DevOps_Capstone_Service
     path: src/helm/capstone-service
-    ref: master
+    ref: release/1.1.0
   values:
     image:
       repository: florianseidel/capstone-service
