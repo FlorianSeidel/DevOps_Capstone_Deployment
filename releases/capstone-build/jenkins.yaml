@@ -5,6 +5,8 @@ metadata:
   namespace: capstone-adm
   annotations:
     flux.weave.works/automated: "false"
+    repository.fluxcd.io/app: master.image
+    tag.fluxcd.io/app: master.tag
 spec:
   releaseName: capstone-jenkins
   chart:
@@ -41,10 +43,10 @@ spec:
               name: jenkins-secret
               key: GITHUB_PW
         - name: DOCKERHUB_USER
-            valueFrom:
-              secretKeyRef:
-                name: jenkins-secret
-                key: DOCKERHUB_USER
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-secret
+              key: DOCKERHUB_USER
         - name: DOCKERHUB_PW
           valueFrom:
             secretKeyRef:
