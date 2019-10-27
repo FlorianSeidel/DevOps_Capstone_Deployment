@@ -9,7 +9,7 @@ metadata:
     #flux.weave.works/tag.chart-image.tag: glob:dev-*
     repository.fluxcd.io/app: image.repository
     tag.fluxcd.io/app: image.tag
-    filter.tag/app: 'glob: dev-*'
+    filter.tag/app: 'glob: master-*'
 spec:
   releaseName: capstone-service-dev
   chart:
