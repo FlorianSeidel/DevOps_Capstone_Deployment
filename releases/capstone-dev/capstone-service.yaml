@@ -11,7 +11,7 @@ spec:
   releaseName: capstone-service-dev
   chart:
     git: git@github.com:florianseidel/DevOps_Capstone_Service
-    path: src/helm/charts/capstone-service
+    path: src/helm/capstone-service
     ref: master
   values:
     replicaCount: 1
