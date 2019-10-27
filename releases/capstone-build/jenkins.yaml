@@ -1,14 +1,14 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: capstone-jenkins
+  name: capstone-jenkins2
   namespace: capstone-build
   annotations:
     flux.weave.works/automated: "false"
     repository.fluxcd.io/app: master.image
     tag.fluxcd.io/app: master.tag
 spec:
-  releaseName: capstone-jenkins
+  releaseName: capstone-jenkins2
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: jenkins
