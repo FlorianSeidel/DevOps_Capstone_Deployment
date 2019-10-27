@@ -1,0 +1,23 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: capstone-service-dev
+  namespace: capstone-dev
+  annotations:
+    flux.weave.works/automated: "false"
+    repository.fluxcd.io/app: image.repository
+    tag.fluxcd.io/app: image.tag
+    filter.tag/app: 'semver: ~1.1'
+spec:
+  releaseName: capstone-service-dev
+  chart:
+    git: git@github.com:florianseidel/DevOps_Capstone_Service
+    path: src/helm/capstone-service
+    ref: master
+  values:
+    image:
+      repository: florianseidel/capstone-service
+      tag: 1.1.0
+    replicaCount: 1
+    quarkus.profile: dev
