@@ -19,6 +19,6 @@ spec:
   values:
     image:
       repository: florianseidel/capstone-service
-      tag: latest
+      tag: dev-eab727f
     replicaCount: 1
     quarkus.profile: dev
