@@ -1,0 +1,107 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: jenkins
+  namespace: capstone-adm
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: jenkins
+  chart:
+    repository: stable
+    name: jenkins
+    version: 1.7.9
+  values:
+    master:
+      image: jenkins/jenkins
+      tag: latest
+      imagePullSecretName: regcred
+      serviceType: ClusterIP
+      installPlugins: [job-dsl,
+                       blueocean,
+                       matrix-auth,
+                       maven-plugin,
+                       kubernetes:1.18.2,
+                       workflow-aggregator:2.6,
+                       credentials-binding:1.19,
+                       permissive-script-security,
+                       git,
+                       workflow-job:2.33,
+                       configuration-as-code:1.32,
+                       pipeline-utility-steps]
+      containerEnv:
+        - name: GITHUB_PW
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-secret
+              key: GITHUB_PW
+        - name: DOCKERHUB_PW
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-secret
+              key: DOCKERHUB_PW
+        - name: JAVA_OPTS
+          value: -Dpermissive-script-security.enabled=true
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-secret
+              key: GITHUB_TOKEN
+      sidecars:
+        configAutoReload:
+          enabled: true
+      rbac:
+        install: true
+      JCasC:
+        enabled: true
+        configScripts:
+          capstone-credentials: |
+            credentials:
+              system:
+                domainCredentials:
+                  - credentials:
+                      - usernamePassword:
+                          scope: GLOBAL
+                          id: github
+                          username: FlorianSeidel
+                          password: ${GITHUB_PW}
+                      - usernamePassword:
+                          scope: GLOBAL
+                          id: dockerhub
+                          username: florianseidel
+                          password: ${DOCKERHUB_PW}
+                      - string:
+                          scope: GLOBAL
+                          id: "github-token"
+                          secret: ${GITHUB_TOKEN}
+                          description: "GitHub Token"
+          seed-job: |
+            jobs:
+              - script: >
+                  multibranchPipelineJob('DevOps_Capstone_Service') {
+                    // build master as well as feature branches
+                    branchSources {
+                    github {
+                    id('7462846483648')
+                    scanCredentialsId('github')
+                    checkoutCredentialsId('github')
+                    repoOwner('FlorianSeidel')
+                    repository('DevOps_Capstone_Service')
+                    includes('master feature/* release/*')
+                    }
+                  }
+                    // check every minute for scm changes as well as new / deleted branches
+                    triggers {
+                    periodic(1)
+                  }
+                    // don't keep build jobs for deleted branches
+                    orphanedItemStrategy {
+                    discardOldItems {
+                    numToKeep(0)
+                    }
+                  }
+                  }
+                    // automatically queue the job after the initial creation
+                    if (!jenkins.model.Jenkins.instance.getItemByFullName('DevOps_Capstone_Service')) {
+                    queue('DevOps_Capstone_Service')
+                  }
