@@ -1,0 +1,17 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: podinfo-dev
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: "latest"
+spec:
+  releaseName: podinfo-dev
+  chart:
+    git: git@github.com:florianseidel/DevOps_Capstone_Service
+    path: src/helm/charts/capstone-service
+    ref: master
+  values:
+    replicaCount: 1
