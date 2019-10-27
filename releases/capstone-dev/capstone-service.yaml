@@ -15,3 +15,4 @@ spec:
     ref: master
   values:
     replicaCount: 1
+    quarkus.profile: dev
