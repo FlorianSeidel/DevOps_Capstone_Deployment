@@ -1,12 +1,12 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: jenkins
+  name: capstone-jenkins
   namespace: capstone-adm
   annotations:
     flux.weave.works/automated: "false"
 spec:
-  releaseName: jenkins
+  releaseName: capstone-jenkins
   chart:
     repository: stable
     name: jenkins
