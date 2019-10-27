@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: capstone-jenkins
   chart:
-    repository: stable
+    repository: https://kubernetes-charts.storage.googleapis.com
     name: jenkins
     version: 1.7.9
   values:
