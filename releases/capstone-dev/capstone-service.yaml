@@ -17,5 +17,8 @@ spec:
     path: src/helm/capstone-service
     ref: master
   values:
+    image:
+      repository: florianseidel/capstone-service
+      tag: latest
     replicaCount: 1
     quarkus.profile: dev
