@@ -18,6 +18,6 @@ spec:
   values:
     image:
       repository: florianseidel/capstone-service
-      tag: dev-eab727f
+      tag: master-8c034a1
     replicaCount: 1
     quarkus.profile: dev
