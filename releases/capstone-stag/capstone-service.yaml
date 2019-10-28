@@ -6,9 +6,7 @@ metadata:
   namespace: capstone-stag
   annotations:
     flux.weave.works/automated: "true"
-    repository.fluxcd.io/app: image.repository
-    tag.fluxcd.io/app: image.tag
-    filter.tag/app: semver:~1.1
+    flux.weave.works/tag.chart-image: semver:~1.1
 spec:
   releaseName: capstone-service-stag
   chart:
@@ -16,8 +14,6 @@ spec:
     path: src/helm/capstone-service
     ref: release/1.1.0
   values:
-    image:
-      repository: florianseidel/capstone-service
-      tag: 1.1.1
+    image: florianseidel/capstone-service:1.1.1
     replicaCount: 1
     quarkus.profile: dev
