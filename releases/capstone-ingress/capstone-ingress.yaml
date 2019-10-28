@@ -10,7 +10,7 @@ spec:
     - host: localhost
       http:
         paths:
-          - path: /
+          - path: /capstone-service
             backend:
               serviceName: capstone-service-proxy
               servicePort: 8080
