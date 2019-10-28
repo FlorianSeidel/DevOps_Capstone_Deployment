@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: capstone-ingress
+  namespace: capstone-ingress
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: capstone-service-proxy
+              servicePort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capstone-service-proxy
+  namespace: capstone-ingress
+spec:
+  type: ExternalName
+  #Change this for blue/green deployment switch
+  externalName: capstone-service-prod-blue.capstone-prod-blue.svc.cluster.local
+  ports:
+    - port: 8080

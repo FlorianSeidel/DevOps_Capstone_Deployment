@@ -1,0 +1,18 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: capstone-service-prod-green
+  namespace: capstone-prod-green
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: capstone-service-prod-green
+  chart:
+    git: git@github.com:florianseidel/DevOps_Capstone_Service
+    path: src/helm/capstone-service
+    ref: release/1.1.0
+  values:
+    image: florianseidel/capstone-service:1.1.2
+    replicaCount: 1
+    quarkus.profile: dev

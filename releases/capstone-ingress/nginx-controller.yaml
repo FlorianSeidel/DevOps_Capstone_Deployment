@@ -1,0 +1,15 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: nginx-controller
+  namespace: capstone-ingress
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: nginx-controller
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: nginx-ingress
+    version: 1.24.4
+  values:

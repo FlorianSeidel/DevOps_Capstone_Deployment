@@ -16,12 +16,43 @@ kubectl create secret generic regcred \
 	--type=kubernetes.io/dockerconfigjson \
 	--dry-run \
 	-o json > reg-cred.json
-
 kubeseal --format=yaml --cert=pub-cert.pem < reg-cred.json > releases/capstone-dev/reg-cred.yaml
-
 rm reg-cred.json
 cat releases/capstone-dev/reg-cred.yaml
-
 git add releases/capstone-dev/reg-cred.yaml
+
+kubectl create secret generic regcred \
+	--namespace capstone-stag  \
+	--from-file=.dockerconfigjson=/home/seifl/.docker/config.json \
+	--type=kubernetes.io/dockerconfigjson \
+	--dry-run \
+	-o json > reg-cred.json
+kubeseal --format=yaml --cert=pub-cert.pem < reg-cred.json > releases/capstone-stag/reg-cred.yaml
+rm reg-cred.json
+cat releases/capstone-stag/reg-cred.yaml
+git add releases/capstone-stag/reg-cred.yaml
+
+
+kubectl create secret generic regcred \
+	--namespace capstone-prod-blue  \
+	--from-file=.dockerconfigjson=/home/seifl/.docker/config.json \
+	--type=kubernetes.io/dockerconfigjson \
+	--dry-run \
+	-o json > reg-cred.json
+kubeseal --format=yaml --cert=pub-cert.pem < reg-cred.json > releases/capstone-prod-blue/reg-cred.yaml
+rm reg-cred.json
+cat releases/capstone-prod-blue/reg-cred.yaml
+git add releases/capstone-prod-blue/reg-cred.yaml
+
+kubectl create secret generic regcred \
+	--namespace capstone-prod-green  \
+	--from-file=.dockerconfigjson=/home/seifl/.docker/config.json \
+	--type=kubernetes.io/dockerconfigjson \
+	--dry-run \
+	-o json > reg-cred.json
+kubeseal --format=yaml --cert=pub-cert.pem < reg-cred.json > releases/capstone-prod-green/reg-cred.yaml
+rm reg-cred.json
+cat releases/capstone-prod-green/reg-cred.yaml
+git add releases/capstone-prod-green/reg-cred.yaml
 
 git commit -a -m "Add docker registry credentials." && git push
