@@ -13,3 +13,7 @@ spec:
     name: nginx-ingress
     version: 1.24.4
   values:
+    controller:
+      image:
+        repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+        tag: 0.26.1
