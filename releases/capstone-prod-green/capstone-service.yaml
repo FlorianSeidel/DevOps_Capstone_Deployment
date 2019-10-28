@@ -15,4 +15,4 @@ spec:
   values:
     image: florianseidel/capstone-service:1.1.2
     replicaCount: 1
-    quarkus.profile: dev
+    quarkus.profile: prod

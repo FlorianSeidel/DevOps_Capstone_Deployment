@@ -3,7 +3,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: capstone-service-prod-blue
-  namespace: capstone-service-prod-blue
+  namespace: capstone-prod-blue
   annotations:
     flux.weave.works/automated: "false"
 spec:
