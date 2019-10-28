@@ -11,7 +11,7 @@ spec:
     metadata:
       creationTimestamp: null
       name: regcred
-      namespace: capstone-dev
+      namespace: capstone-stag
     type: kubernetes.io/dockerconfigjson
 status: {}
 

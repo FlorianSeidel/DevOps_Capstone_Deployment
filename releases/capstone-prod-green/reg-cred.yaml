@@ -3,7 +3,7 @@ kind: SealedSecret
 metadata:
   creationTimestamp: null
   name: regcred
-  namespace: capstone-stag
+  namespace: capstone-prod-green
 spec:
   encryptedData:
     .dockerconfigjson: AgA/zoTelogbavpZ5+BJ6FGtIxGbYblMTZE1hJKLPJ52ftosE8JQbOgoKZBNUbCCWkpkUKr6vi69QPwYXKUbQXut93r/x1AOHv1mNcoQ/H8oYRxuxZTMyIKG/zkA8cWf57EXcRx0IO2UA95mA8UuwRyRPnJG3vEGQrnB+CnsXMGnJNX2pNdmZ/ndNQ6tACvIql+nVDV68uz6AIAMnZIIDxhQJJqVaC4i5zUOZwbJpdEJ5qRvQXpf3DoDzWwHyJxFvtnObedZUXlEU5w873r344D0fg5aA84YyEMGn4kOLebEqryGLxO/k1xG5AqCNOY8DUYlgm7+NtqJBVtXsXhfYgwfF9GZmFF6lPX8em5wdySsvhP8QYr0AllREqcMEiYSSmXZN2GP8+OrCvClAUEXpTNLtPzbgQClSyNFd7bZFpz8Y5tCpphnQnsX69jEdAVMp7L5xSDNfS5rxgVy5JGGHP0Za5OX+0v8MdS/qZ0Ba/RcZdhbE54rescGAsTS9C2Yscg3OCakz1ZX2F8TEqkoDCMuZJd1PVaPGwi53UhprAecpDsrelbmex+1AFNCZ5+Z77rfqitVy/RgBEZeo/qVmOBmOgla6TIblYg7jIsX6T/eTWDsWwirLMTpY88YsDH1Hz6F0fSX0QgavHGXKCh14uLLhNQ/AZwXZSXiwhL3qtdNe+O6IhGt3K5QchP167WGOtU/QhgijV9uqTpbma+dohk64JWTePRRQwUUSJUP7vlXEZFB06u6EvUpufqZV0CWXY61cl/6GK681bY3NsTH48ctdubKYjA0gIr/I9knIyCsWmGrkxS72NrqPQh3O9JAS0BIqCvVBrTPVoQo61r+bAw0YbT/F4O0d8EYYLxKl4Id5WM4HosRwi4O4zUSCD3TQgU+5b8hS+KD9kIq8CGsdnK+nXRR7oBcdQ31C1hQtEK1hVo=
@@ -11,7 +11,7 @@ spec:
     metadata:
       creationTimestamp: null
       name: regcred
-      namespace: capstone-dev
+      namespace: capstone-prod-green
     type: kubernetes.io/dockerconfigjson
 status: {}
 
