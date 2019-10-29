@@ -14,7 +14,7 @@ spec:
         paths:
           - path: /capstone(/|$)(.*)
             backend:
-              serviceName: capstone-service-proxy
+              serviceName: capstone-service-proxy-green
               servicePort: 8080
 ---
 kind: Service
@@ -24,19 +24,17 @@ metadata:
   namespace: capstone-ingress
 spec:
   type: ExternalName
-  #Change this for blue/green deployment switch
-  externalName: capstone-service-prod-green.capstone-prod-green.svc.cluster.local
+  externalName: capstone-service-prod-blue.capstone-prod-blue.svc.cluster.local
   ports:
     - port: 8080
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: capstone-service-proxy-blue
+  name: capstone-service-proxy-green
   namespace: capstone-ingress
 spec:
   type: ExternalName
-  #Change this for blue/green deployment switch
   externalName: capstone-service-prod-green.capstone-prod-green.svc.cluster.local
   ports:
     - port: 8080
