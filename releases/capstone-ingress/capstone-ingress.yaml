@@ -25,6 +25,6 @@ metadata:
 spec:
   type: ExternalName
   #Change this for blue/green deployment switch
-  externalName: capstone-service-prod-blue.capstone-prod-blue.svc.cluster.local
+  externalName: capstone-service-prod-green.capstone-prod-green.svc.cluster.local
   ports:
     - port: 8080
