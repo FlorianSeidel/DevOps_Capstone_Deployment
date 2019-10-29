@@ -20,7 +20,19 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: capstone-service-proxy
+  name: capstone-service-proxy-blue
+  namespace: capstone-ingress
+spec:
+  type: ExternalName
+  #Change this for blue/green deployment switch
+  externalName: capstone-service-prod-green.capstone-prod-green.svc.cluster.local
+  ports:
+    - port: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capstone-service-proxy-blue
   namespace: capstone-ingress
 spec:
   type: ExternalName
