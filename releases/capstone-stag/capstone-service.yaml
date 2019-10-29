@@ -6,7 +6,7 @@ metadata:
   namespace: capstone-stag
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: semver:~1.1
+    flux.weave.works/tag.chart-image: semver:~1.2
 spec:
   releaseName: capstone-service-stag
   chart:
