@@ -14,7 +14,7 @@ spec:
           - path: /capstone(/|$)(.*)
             backend:
               #TODO: Cache invalidation when switching. Index.html is cached aparently.
-              serviceName: capstone-service-proxy-blue
+              serviceName: capstone-service-proxy-green
               servicePort: 8080
 ---
 kind: Service
