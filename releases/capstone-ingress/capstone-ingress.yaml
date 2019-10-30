@@ -75,7 +75,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: capstone-service-proxy-dev
+  name: capstone-service-proxy-stag
   namespace: capstone-ingress
 spec:
   type: ExternalName
