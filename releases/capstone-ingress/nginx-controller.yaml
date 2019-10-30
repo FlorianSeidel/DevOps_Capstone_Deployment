@@ -19,8 +19,7 @@ spec:
         tag: 0.26.1
       nodeSelector:
         role: worker
-      controller:
-        service:
-          type: ClusterIP
-      defaultBackend:
-        enabled: false
+      service:
+        type: ClusterIP
+    defaultBackend:
+      enabled: false
