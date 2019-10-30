@@ -149,6 +149,8 @@ items:
     spec:
       replicas: 1
       revisionHistoryLimit: 2
+      nodeSelector:
+        role: capstone-monitoring
       selector:
         matchLabels:
           name: weave-scope-app
@@ -227,6 +229,8 @@ items:
     spec:
       replicas: 1
       revisionHistoryLimit: 2
+      nodeSelector:
+        role: capstone-monitoring
       selector:
         matchLabels:
           name: weave-scope-cluster-agent

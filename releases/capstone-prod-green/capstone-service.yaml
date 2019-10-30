@@ -16,3 +16,5 @@ spec:
     image: florianseidel/capstone-service:1.1.2
     replicaCount: 1
     quarkus.profile: prod
+    nodeSelector:
+      role: green-worker

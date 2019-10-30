@@ -17,3 +17,5 @@ spec:
     image: florianseidel/capstone-service:master-24afdf8
     replicaCount: 1
     quarkus.profile: dev
+    nodeSelector:
+      role: worker
