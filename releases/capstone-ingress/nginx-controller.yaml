@@ -20,6 +20,6 @@ spec:
       nodeSelector:
         role: worker
       service:
-        type: ClusterIP
+        type: NodePort
     defaultBackend:
       enabled: false
