@@ -3,24 +3,41 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/issuer: "letsencrypt-staging"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
   name: capstone-ingress
   namespace: capstone-ingress
 spec:
+  tls:
+    - hosts:
+        - www.capstone.overcast-blog.cloud
+        - www.capstone-stag.overcast-blog.cloud
+        - www.capstone-dev.overcast-blog.cloud
+      secretName: overcast-blog-tls
   rules:
-    - tls:
-        - hosts:
-            - www.capstone.overcast-blog.cloud
-          secretName: overcast-blog-tls
     - host: www.capstone.overcast-blog.cloud
       http:
         paths:
           - path: capstone(/|$)(.*)
             backend:
-              #TODO: Cache invalidation when switching. Index.html is cached aparently.
+              #TODO: Cache invalidation when switching. Index.html is cached apparently.
               serviceName: capstone-service-proxy-green
               servicePort: 8080
+    - host: www.capstone-dev.overcast-blog.cloud
+        http:
+          paths:
+              - path: capstone(/|$)(.*)
+                backend:
+                  serviceName: capstone-service-proxy-dev
+                  servicePort: 8080
+    - host: www.capstone-stag.overcast-blog.cloud
+        http:
+          paths:
+              - path: capstone(/|$)(.*)
+                backend:
+                  serviceName: capstone-service-proxy-stag
+                  servicePort: 8080
 ---
 kind: Service
 apiVersion: v1
@@ -41,5 +58,27 @@ metadata:
 spec:
   type: ExternalName
   externalName: capstone-service-prod-green.capstone-prod-green.svc.cluster.local
+  ports:
+    - port: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capstone-service-proxy-dev
+  namespace: capstone-ingress
+spec:
+  type: ExternalName
+  externalName: capstone-service-dev.capstone-dev.svc.cluster.local
+  ports:
+    - port: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capstone-service-proxy-dev
+  namespace: capstone-ingress
+spec:
+  type: ExternalName
+  externalName: capstone-service-stag.capstone-stag.svc.cluster.local
   ports:
     - port: 8080
