@@ -25,19 +25,19 @@ spec:
               serviceName: capstone-service-proxy-green
               servicePort: 8080
     - host: www.capstone-dev.overcast-blog.cloud
-        http:
-          paths:
-              - path: capstone(/|$)(.*)
-                backend:
-                  serviceName: capstone-service-proxy-dev
-                  servicePort: 8080
+      http:
+        paths:
+            - path: capstone(/|$)(.*)
+              backend:
+                serviceName: capstone-service-proxy-dev
+                servicePort: 8080
     - host: www.capstone-stag.overcast-blog.cloud
-        http:
-          paths:
-              - path: capstone(/|$)(.*)
-                backend:
-                  serviceName: capstone-service-proxy-stag
-                  servicePort: 8080
+      http:
+        paths:
+            - path: capstone(/|$)(.*)
+              backend:
+                serviceName: capstone-service-proxy-stag
+                servicePort: 8080
 ---
 kind: Service
 apiVersion: v1
