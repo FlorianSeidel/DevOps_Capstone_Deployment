@@ -9,8 +9,7 @@ metadata:
   namespace: capstone-ingress
 spec:
   rules:
-    - host: localhost
-      http:
+    - http:
         paths:
           - path: /capstone(/|$)(.*)
             backend:
