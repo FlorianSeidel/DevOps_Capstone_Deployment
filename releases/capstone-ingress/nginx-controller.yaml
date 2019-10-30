@@ -18,4 +18,9 @@ spec:
         repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
         tag: 0.26.1
       nodeSelector:
-        role: infrastructure
+        role: worker
+      controller:
+        service:
+          type: ClusterIP
+      defaultBackend:
+        enabled: false
