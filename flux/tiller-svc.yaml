@@ -6,7 +6,7 @@ metadata:
     app: helm
     name: tiller
   name: tiller-deploy
-  namespace: capstone
+  namespace: kube-system
 spec:
   ports:
   - name: tiller
