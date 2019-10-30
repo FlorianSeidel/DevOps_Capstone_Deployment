@@ -3,11 +3,11 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: dashboard
-  namespace: capstone-monitor
+  namespace: kube-system
   annotations:
     flux.weave.works/automated: "false"
 spec:
-  releaseName: kubernetes-dashboard
+  releaseName: kubernetes-dashboard2
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: kubernetes-dashboard
