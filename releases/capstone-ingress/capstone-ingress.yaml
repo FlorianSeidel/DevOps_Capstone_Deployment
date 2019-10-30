@@ -9,9 +9,14 @@ metadata:
   namespace: capstone-ingress
 spec:
   rules:
-    - http:
+    - tls:
+        - hosts:
+            - www.capstone.overcast-blog.cloud
+          secretName: overcast-blog-tls
+    - host: www.capstone.overcast-blog.cloud
+      http:
         paths:
-          - path: /capstone(/|$)(.*)
+          - path: capstone(/|$)(.*)
             backend:
               #TODO: Cache invalidation when switching. Index.html is cached aparently.
               serviceName: capstone-service-proxy-green
