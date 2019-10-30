@@ -19,7 +19,7 @@ spec:
     - host: www.capstone.overcast-blog.cloud
       http:
         paths:
-          - path: capstone(/|$)(.*)
+          - path: /capstone(/|$)(.*)
             backend:
               #TODO: Cache invalidation when switching. Index.html is cached apparently.
               serviceName: capstone-service-proxy-green
@@ -27,14 +27,14 @@ spec:
     - host: www.capstone-dev.overcast-blog.cloud
       http:
         paths:
-            - path: capstone(/|$)(.*)
+            - path: /capstone(/|$)(.*)
               backend:
                 serviceName: capstone-service-proxy-dev
                 servicePort: 8080
     - host: www.capstone-stag.overcast-blog.cloud
       http:
         paths:
-            - path: capstone(/|$)(.*)
+            - path: /capstone(/|$)(.*)
               backend:
                 serviceName: capstone-service-proxy-stag
                 servicePort: 8080
