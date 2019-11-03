@@ -6,6 +6,7 @@ metadata:
   namespace: capstone-prod-blue
   annotations:
     flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: semver:~1
 spec:
   releaseName: capstone-service-prod-blue
   chart:
