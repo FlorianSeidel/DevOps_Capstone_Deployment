@@ -14,7 +14,7 @@ spec:
     path: src/helm/capstone-service
     ref: release/1.1.0
   values:
-    image: florianseidel/capstone-service:1.1.2
+    image: florianseidel/capstone-service:1.2.1
     replicaCount: 1
     quarkus.profile: prod
     nodeSelector:
