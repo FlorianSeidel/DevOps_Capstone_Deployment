@@ -18,7 +18,7 @@ spec:
       image: jenkins/jenkins
       tag: latest
       nodeSelector:
-        role: infrastructure
+        role: worker
       imagePullSecretName: regcred
       serviceType: ClusterIP
       installPlugins: [job-dsl,

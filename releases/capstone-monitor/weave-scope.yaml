@@ -150,7 +150,7 @@ items:
       replicas: 1
       revisionHistoryLimit: 2
       nodeSelector:
-        role: infrastructure
+        role: worker
       selector:
         matchLabels:
           name: weave-scope-app
@@ -230,7 +230,7 @@ items:
       replicas: 1
       revisionHistoryLimit: 2
       nodeSelector:
-        role: infrastructure
+        role: worker
       selector:
         matchLabels:
           name: weave-scope-cluster-agent

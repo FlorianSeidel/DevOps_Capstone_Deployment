@@ -68,6 +68,7 @@ metadata:
     k8s-app: cluster-autoscaler
 rules:
   - apiGroups: [""]
+  - apiGroups: [""]
     resources: ["configmaps"]
     verbs: ["create","list","watch"]
   - apiGroups: [""]

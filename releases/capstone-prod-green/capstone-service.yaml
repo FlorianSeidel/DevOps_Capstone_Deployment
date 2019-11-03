@@ -17,4 +17,4 @@ spec:
     replicaCount: 1
     quarkus.profile: prod
     nodeSelector:
-      role: green-worker
+      role: prod-worker

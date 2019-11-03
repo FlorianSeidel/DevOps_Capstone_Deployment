@@ -17,7 +17,7 @@ spec:
         app: cluster-autoscaler
     spec:
       nodeSelector:
-        role: capstone-support
+        role: worker
       serviceAccountName: cluster-autoscaler
       containers:
         - image: k8s.gcr.io/cluster-autoscaler:v1.12.3
