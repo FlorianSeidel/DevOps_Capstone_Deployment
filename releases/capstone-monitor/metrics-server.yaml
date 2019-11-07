@@ -2,10 +2,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: metrics-server
+  name: capstone-metrics-server
   namespace: capstone-monitor
 spec:
-  releaseName: metrics-server
+  releaseName: capstone-metrics-server
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: metrics-server
