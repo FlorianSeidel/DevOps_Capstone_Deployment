@@ -21,7 +21,7 @@ spec:
         paths:
           - path: /capstone(/|$)(.*)
             backend:
-              serviceName: capstone-service-proxy-blue
+              serviceName: capstone-service-proxy-green
               servicePort: 8080
     - host: www.capstone-dev.overcast-blog.cloud
       http:

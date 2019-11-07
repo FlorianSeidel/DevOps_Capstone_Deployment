@@ -8,7 +8,6 @@ metadata:
     component: controller
     release: nginx-controller
   annotations:
-    # by default the type is elb (classic load balancer).
     service.beta.kubernetes.io/aws-load-balancer-type: nlb
 spec:
   # this setting is to make sure the source IP address is preserved.

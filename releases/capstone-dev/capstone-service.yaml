@@ -15,7 +15,16 @@ spec:
     ref: master
   values:
     image: florianseidel/capstone-service:master-458fe41
-    replicaCount: 1
+
+    minReplicas: 1
+    maxReplicas: 10
     quarkus.profile: dev
     nodeSelector:
       role: worker
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
