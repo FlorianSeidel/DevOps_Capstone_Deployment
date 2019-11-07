@@ -1,0 +1,17 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: regcred
+  namespace: capstone-prod-blue
+spec:
+  encryptedData:
+    .dockerconfigjson: AgDLxrbhQNSh2IEIvAgn5m7qPCxLvnpsL+/R76znHvvLchdynZnY/xXEaKnIVnqhAUrM3u7vA2DNJUwbzTwC/U4zeR+VV+ZnntvlONFK4ONpxl60UpJb225RVpInmcUHm+tRT828m+hCVFQzqp028JqFeJNSSv0ig/xAf5GomiWGVnkPIU5wW4oJ6XoYZXCUkxNKafOyi6ckY/kfr+aDczrjfDfpQNjW2lcChLPolEc/TH3cAIGM7ctTN6uBL5bnc6J6sNoW9OCMXBrLxPdiW3gmXUBaKwVhF0ZM900iF2UkGtzz7mtILtYY7uhU8kvut3a/wBSqhLAybKJkR4b8h1WwfVnavE/mTzAhOHG8qP/0dnK1EoecmMo4Ipw2/hqyK8sOovzBkKkK1Abu4kGEWc2gwSwzujuDrskpsaiUlo4p8W3jaZEeqkxzBbIvGU8U1k6uj7CmP+X/KKkghXukjrzKIZJ0SrkKTbcmMu4x+LjZa/AUa2UipSlcP0ldaFfH+lx/yGO8FWcwHtwvH7XENVToyhvmkqH73UE93Q8HlrW+DqArUbsLyN+mqQcHKvz05cnDP4upp20aEYTm9Up76h4XQUBGrJYK2GGzSF9eFoye0EUno2eqD9weMxCFLGNCzSjfU+IcI0odbTzJD7Qe8C72zCJpSziD3il6PZtLxyFE2fEXxmwX7yRKipXwlWd7Y75aWUzigeV1uVLnjEMUbIgnuNEy3FUz2cI7JN1Cw6MBGNfOb3NIFPgyzlxEm5H1jhjzdYoNOTCW4Qy4ruIDZQqKQ7eyfyFMqt0bN65nQAojOXqqvRW5UNC9JX51sN/+iobNgvMnJgRhjuzsGcnjaNA2Yv4Ts9SaladWKbaVFn+IP8WvLQysEFRAZDYKnM4=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: regcred
+      namespace: capstone-prod-blue
+    type: kubernetes.io/dockerconfigjson
+status: {}
+
