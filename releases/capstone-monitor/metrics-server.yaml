@@ -2,10 +2,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: metrics-server
+  name: metrics-server2
   namespace: capstone-monitor
 spec:
-  releaseName: metrics-server
+  releaseName: metrics-server2
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: metrics-server
