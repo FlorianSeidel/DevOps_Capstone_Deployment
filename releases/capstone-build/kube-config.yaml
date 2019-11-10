@@ -30,3 +30,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: kube-config
+  namespace: capstone-build
