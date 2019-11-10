@@ -14,6 +14,17 @@ spec:
     name: jenkins
     version: 1.7.9
   values:
+    agent:
+      volumes:
+        - type: Secret
+          secretName: aws-credentials-secret
+          mountPath: /home/jenkins/.aws/credentials
+        - type: Configmap
+          configMapName: aws-config
+          mountPath: /home/jenkins/.aws/config
+        - type: Configmap
+          configMapName: kube-config
+          mountPath: /home/jenkins/.kube/config
     master:
       image: jenkins/jenkins
       tag: latest
