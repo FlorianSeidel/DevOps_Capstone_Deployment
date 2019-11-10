@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  "63": |
+    [default]\nregion = eu-central-1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: aws-config
