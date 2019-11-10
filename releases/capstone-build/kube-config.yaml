@@ -1,0 +1,42 @@
+apiVersion: v1
+data:
+  kube-config.yaml: |
+    cluster:
+      status: ACTIVE
+      endpoint: https://F1CAEAF94FEA6EA27D4B7DF9EF038253.gr7.eu-central-1.eks.amazonaws.com
+      logging:
+        clusterLogging:
+        - enabled: false
+          types:
+          - api
+          - audit
+          - authenticator
+          - controllerManager
+          - scheduler
+      name: capstone
+      tags: {}
+      certificateAuthority:
+        data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1URXhNREU0TURNeE9Wb1hEVEk1TVRFd056RTRNRE14T1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTVNYCnNwZ1g0aVZPV0doWG1GUnZYZmVFOVNxS0xIVjQ5SFV2cFZrOEo2RXY5VmlWOXRhcXAxVkJuTCtJa01EUW9TOFUKKzk0cjViNWJ4TmhqcmdCc0FzL0hUSVppcnpvTHFsM25wZURGbi83VFhUcWpzZFRGVmhZcUVvQy8yVHJBS0V6dApUdW9KOHhLcDdsN3ZUaVpobm1qaDJTNERybWJjaUZnV0lFcktmSDBtWTBYU05pSnpKa1pQZVJpbW9aNjl0YndwCjNFbmtUdGlXQ29EZjJ1aGs3QzlaZHltUU1ydjFmNWszdDFpcFZhSDNzVXRpcGovTEdvRmh6blpTWHh1NXFtQXAKcVNjNDQwSTErcUtUM3VnRVJJSnVTWHA1VlpXaFdZc2w1Y1hKSHNkdWx4OS9IdGoxN1BBOCtLRXNhK216ZlVxNApCM3g1OUJZM1JKeGo2aWljazBjQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFHeDc5b095bklwV0NUYVEzanp5TkIrOFJyQlcKK1lwa1BBbDc4ODVhVWIvWXNEQVlPd1BleHhBOGphS3RiVENObXR2b0Z0RlE0cXhVR2RnREliejQ3Q2RRYTNaMQpDMHo3Q3pkT1BTZFduRmZmYTMyUHJCSEY2QTZheHpmU21NVExrTnJORWhRMGZvbm1HRGhuaEh0YnlHWXFLMHZFCkVpcWdjaFFPYXVpTGR3MVNMUExoZnc2c3BiNTNaQmpXMmRMa255NEFUL0FoODJDVlRQSUdKamxTcGk2Ums0OFAKRWM1bTdYMCt4UVZmK1FqdjFpV3hSLzF0L0VNYUFOeHBybW1QY1FucWFnVGlWK0Zycjk1UGRzRkxJcCtGcEkxYQo2UTV0QzZqOVBJei9sNXkzOHU4eU1oL2pZWUhONTFlc09CdnAwREhxZ2x1ZXhqbDFFUkJHTWhwOTM4ND0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      roleArn: arn:aws:iam::147702654112:role/eksctl-capstone-cluster-ServiceRole-YMSPD7LJPQ57
+      resourcesVpcConfig:
+        subnetIds:
+        - subnet-0b673f6cd8ebfa424
+        - subnet-0e838289fb39c3b26
+        - subnet-00994cd5d8eaf7449
+        - subnet-0bfc2ecc600af3b32
+        vpcId: vpc-0407205a11ce09777
+        endpointPrivateAccess: false
+        endpointPublicAccess: true
+        securityGroupIds:
+        - sg-0877530f5a5be5773
+      platformVersion: eks.1
+      version: "1.14"
+      arn: arn:aws:eks:eu-central-1:147702654112:cluster/capstone
+      identity:
+        oidc:
+          issuer: https://oidc.eks.eu-central-1.amazonaws.com/id/F1CAEAF94FEA6EA27D4B7DF9EF038253
+      createdAt: 1.573408558726e+09
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: kube-config
