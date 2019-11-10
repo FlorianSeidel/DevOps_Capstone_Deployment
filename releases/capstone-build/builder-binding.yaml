@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   creationTimestamp: null
-  name: build-slave
+  name: builder-binding
   namespace: capstone-build
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -10,5 +10,5 @@ roleRef:
   name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: default
+    name: builder
     namespace: capstone-build
