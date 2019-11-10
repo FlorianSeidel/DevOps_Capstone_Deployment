@@ -14,7 +14,7 @@ spec:
     path: src/helm/capstone-service
     ref: master
   values:
-    image: florianseidel/capstone-service:master-4d6964a
+    image: florianseidel/capstone-service:master-2d892a2
     minReplicas: 1
     maxReplicas: 10
     quarkus.profile: dev
