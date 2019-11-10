@@ -16,7 +16,7 @@ data:
     kind: Config
     preferences: {}
     users:
-    - name: .capstone-adm@capstone.eu-central-1.eksctl.io
+    - name: capstone-adm@capstone.eu-central-1.eksctl.io
       user:
         exec:
           apiVersion: client.authentication.k8s.io/v1alpha1
